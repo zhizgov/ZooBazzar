@@ -1,0 +1,38 @@
+﻿@page
+@model ZooBazzarWebApp.Pages.BuyTicketModel
+@{
+}
+@using Entities;
+
+
+<form method="post">
+
+
+    <div class="buyTicket">
+
+        <label> Ticket type:</label>
+        <select asp-for="Ticket.Type" name="type" onChange="combo(this, 'box)">
+            <option>@TypeOfTicket.adult</option>
+            <option>@TypeOfTicket.child</option>
+        </select>
+
+        <label> Date (Optional) : </label> <span asp-validation-for="Ticket.Date"></span>
+        <input asp-for="Ticket.Date" id="date" name="date">
+        @if (!User.IsInRole("Customer"))
+        {
+            <label> Name:</label> <span asp-validation-for="Customer.Name"></span>
+            <input asp-for="Customer.Name" id="name" name="name">
+            <label> Email:</label> <span asp-validation-for="Customer.Email"></span>
+            <input asp-for="Customer.Email" id="email" name="email">
+            <button class="btn btn-default" asp-page-handler="NoAccount">Buy Ticket Annonimously</button>
+        }
+        <button class="btn btn-default" asp-page-handler="WithAccount">Buy Ticket</button>
+
+
+    </div>
+
+</form>
+
+@section scripts{
+<partial name="_ValidationScriptsPartial" />
+}

@@ -1,0 +1,60 @@
+﻿@page
+@model ZooBazzarWebApp.Pages.ProfileModel
+@{
+    Employee? e = Model.Employee;
+    Customer? c = Model.Customer;
+    Subscription? s = Model.Subscription;
+
+    Layout = "MyLayout";
+}
+@using Entities;
+
+<link rel="stylesheet" href="./css/MyProfile.css">
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+
+<div class="personalInfo">
+    <p class="info">Personal information</p>
+
+        @if(e != null)
+        {
+        <p><b>Name:</b> @e.Name </p>
+        <p><b>Last Name:</b>  @e.Lastname</p>
+        <p><b>Email:</b> @e.Email</p>
+        <p><b>Address:</b>  @e.Address</p>
+        <p><b>Birthdate: </b>@e.Birthdate.ToShortDateString()</p>
+        <p><b>Phone:</b> @e.Phone</p>
+        <p><b>Emergency Contact:</b>  @e.EmargencyContact</p>
+        <p> <b>BSN: </b> @e.Bsn</p>
+    }else if(c != null)
+    {
+        <p><b>Name:</b>@c.FirstName</p>
+        <p><b>Lastname</b>@c.LastName</p>
+        <p><b>Email:</b>@c.Email</p>
+        if(s != null)
+        {
+            <p>The customer has subscription</p>
+            <div class = "subscription">
+                 <p><b>Type:</b>@s.SubscriptionType.ToString()</p>
+                 <p><b>StartDate:</b>@s.StartDate.ToLongDateString()</p>
+                 <p><b>EndDate:</b>@s.EndDate.ToLongDateString()</p>
+            </div>
+        }else
+        {
+            <a class="button" href="./CreateSubscription"> Subscribe</a>
+        }
+
+    }
+
+    @if (User.IsInRole("Caretaker"))
+    {
+        <a class="button" href="~/ChangeCredentials"> Change personal information</a>
+    }
+
+</div>
+

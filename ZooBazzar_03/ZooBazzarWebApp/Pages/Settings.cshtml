@@ -1,0 +1,21 @@
+﻿@page
+@model ZooBazzarWebApp.Pages.SettingsModel
+@{
+    Layout = "MyLayout";
+}
+<link rel="stylesheet" href="./css/site.css">
+
+<br />
+<br />
+
+<div class="form-outline mb-4">
+    <form method="post">
+
+        <label class="form-label" for="form2Example2">Password</label>
+        <input asp-for="NewPassword" type="password" id="form2Example2" class="form-control" />
+
+        <button type="button" class="btn">Change the password</button>
+
+    </form>
+
+</div>

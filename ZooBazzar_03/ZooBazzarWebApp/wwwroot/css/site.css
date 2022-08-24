@@ -1,0 +1,236 @@
+html {
+    font-size: 14px;
+    filter: saturate(80%);
+    padding: 0px;
+    margin: 0px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+html {
+    min-height: 100%;
+}
+
+body {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: cross-fade();
+    padding: 0px;
+    margin: 0px;
+}
+
+
+.changeCredentials {
+    text-align: center;
+    margin-top: 5rem;
+    margin-left: 7rem;
+    margin-bottom: 5rem;
+    justify-content: space-between;
+}
+
+span {
+    color: red;
+}
+
+
+
+.changeCredentials input,
+.changeCredentials label,
+.changeCredentials textarea {
+    display: block;
+    font-size: 2.4rem;
+}
+
+.changeCredentials input,
+.changeCredentials textarea {
+    margin: 1rem auto;
+    width: 40%;
+}
+
+.changeCredentials label {
+    margin-bottom: 2.5rem;
+}
+
+.changeCredentials button {
+    margin-bottom: 10rem;
+    padding: 1rem 4rem;
+    background: rgb(24, 143, 212);
+    border: none;
+    color: white;
+    width: 40%;
+}
+
+.personalInfo {
+    margin-left: 10px;
+    font-size: 3rem;
+    display: block;
+    justify-content: space-between;
+}
+
+.ticket {
+    background-image: url("zoo2.jpg");
+    background-color: white;
+    background-repeat: no-repeat;
+    background-size: 800px 300px;
+    opacity: 1;
+    border: 1px;
+    border-radius: 5px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    max-width: 800px;
+    min-height: 200px;
+    margin-top: 30px;
+    margin-left: 30px;
+    position: relative;
+    border: solid #f0e0b5;
+    text-align: center;
+    height: 300px;
+    
+}
+
+    .ticket img {
+        height: 60px;
+        min-width: 150px;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        margin: 15px;
+        border: solid 10px white;
+    }
+
+.title {
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 25px;
+    font-weight: 800;
+}
+
+.ticketInfo {
+    padding: 15px;
+    text-align: left;
+}
+
+.ticketInfo p {
+    background-color: #1c3d40;
+    max-width: 200px;
+    padding: 5px;
+    border-radius: 5px;
+    color: #f0e0b5;
+    font-size: 18px;
+    margin: 5px;
+}
+
+.nav-link {
+    text-decoration: none;
+    list-style: none;
+    list-style-type: none;
+    font-size: 30px;
+    color: gainsboro;
+    padding: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: max-content;
+}
+
+    .nav-link:hover {
+        background-color: #537477;
+    }
+
+.navigation {
+    position: fixed;
+    background-color: #1c3d40;
+    margin-top: 20px;
+    display: flex;
+    position: fixed;
+    font-family: 'Merriweather Sans', sans-serif;
+    z-index: 3;
+}
+
+header {
+    text-align: center;
+    white-space: inherit;
+}
+
+.navigation img {
+    width: 88px;
+    height: 66px;
+}
+
+body {
+    background-color: #2a3130;
+}
+
+.mb-4 {
+    margin-top: 80px;
+    display: flex;
+    text-align: center;
+    font-family: 'Merriweather Sans', sans-serif;
+    margin-left: 50px;
+}
+
+.form-label {
+    font-size: 30px;
+    color: #f0e0b5;
+}
+
+#form2Example2 {
+    min-width: 300px;
+    height: 25px;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+.btn {
+    margin-left: 20px;
+    background-color: #9ab1b7;
+    border: none;
+    min-width: 200px;
+    min-height: 25px;
+    font-size: 20px;
+    font-family: 'Merriweather Sans', sans-serif;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: 600;
+}
+
+
+.complaint{
+    margin-left: 30px;
+   flex-wrap: nowrap;
+}
+
+.cmpl{
+    font-size: 20px;
+}
+
+.btnRequest {
+    background-color: #9ab1b7;
+    font-size: 17px;
+    border: none;
+    border-radius: 2px;
+}
+.cmplTitle{
+    min-width: 300px;
+}
+
+.cmplDescr{
+    width: 300px;
+    height: 200px;
+}
+
+
+.vacation{
+    margin-left: 30px;
+    font-size: 20px;
+}
+
+.date{
+    font-size: 16px;
+}
+
+.btnRequest{
+    font-size: 20px;
+}

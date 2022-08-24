@@ -1,0 +1,27 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+    Layout = "MyLayout";
+}
+@using Entities;
+<link rel="stylesheet" href="./css/HomePage.css">
+
+<div class="home">
+    <div class="img">
+        <img src="/css/tiger.jpg" />
+    </div>
+
+    <div class="text-center">
+
+        <h1 class="display-4">Welcome to the wild world of the Zoo Bazzar</h1>
+        @foreach (ZooDescription zooDescription in Model.zm.GetDescriptions())
+        {
+            if (zooDescription.IsActive == true)
+            {
+                <p>@zooDescription.Description</p>
+            }
+        }
+    </div>
+
+</div>

@@ -1,0 +1,45 @@
+﻿@page
+@model ZooBazzarWebApp.Pages.MyTicketsModel
+@{
+    Image img = Model.img;
+    TicketManager tm = Model.tm;
+    CustomerManager cm = Model.cm;
+    Layout = "MyLayout";
+}
+@using Zen;
+@using LogicLayer;
+@using Entities;
+@using System.Security.Claims;
+<link rel="stylesheet" href="./css/site.css">
+
+<br />
+<br />
+<br />
+<br />
+<br />
+
+@foreach (Ticket t in tm.GetTickets(cm.GetCustomer(@Convert.ToInt32(User.FindFirst("ID").Value))))
+{
+    <div class="ticket">
+        <p class="title">Zoo Bazzar Entry Pass</p>
+        <img src=@Model.ConvertImageToUrl(t.Id) alt="Barcode" />
+        <div class="ticketInfo">
+            <p>Type of ticket: @t.TypeOfTicket</p><br />
+            <p>Price: @t.Price Euro</p><br />
+            @if (@t.Date != null)
+            {
+                <p>Date of use: @t.Date</p>
+
+                <br />
+            }
+            else
+            {
+                <p>Date of use: NO DATE</p>
+
+                <br />
+            }
+        </div>
+    </div>
+
+
+}

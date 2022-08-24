@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - ZooBazzarWebApp</title>
+    @*    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />*@
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/ZooBazzarWebApp.styles.css" asp-append-version="true" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="navigation">
+            <img src="~/css/logo.png" />
+            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
+            <a class="nav-link text-dark" asp-area="" asp-page="/Profile">Profile</a>
+
+            @if (User.IsInRole("Caretaker"))
+            {
+                <a class="nav-link text-dark" asp-area="" asp-page="/Schedule">Schedule</a>
+                <a class="nav-link text-dark" asp-area="" asp-page="/RequestVacation">Request vacation</a>
+            }
+            @if (User.IsInRole("Customer"))
+            {
+                <a class="nav-link text-dark" asp-area="" asp-page="/MyTickets">My Tickets</a>
+                <a class="nav-link text-dark" asp-area="" asp-page="/BuyTicket">Buy tickets</a>
+                <a class="nav-link text-dark" asp-area="" asp-page="/Complaint">File a complaint</a>
+            }
+            <a class="nav-link text-dark" asp-area="" asp-page="/Logout">Logout</a>
+            <a class="nav-link text-dark" asp-area="" asp-page="/Settings">Settings</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

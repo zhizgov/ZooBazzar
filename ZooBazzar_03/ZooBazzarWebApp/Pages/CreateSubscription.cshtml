@@ -1,0 +1,28 @@
+﻿@page
+@model ZooBazzarWebApp.Pages.CreateSubscriptionModel
+@{
+
+}
+<div class="right">
+            <form method="post">
+
+                <div class="inputs">
+                    <label> Start Date:</label> <span asp-validation-for="DTO.StartDate"></span>
+                    <input asp-for="DTO.StartDate" id="date">
+                   
+                    <label> Type subscription:</label>
+                    <select asp-for="DTO.Type" name="list" onChange="combo(this, 'box)">
+                        @foreach (@Entities.TypeSubscription s in @Entities.TypeSubscription.GetTypesSubscription)
+                        {
+                            <option>@s.ToString()</option>                            
+                        }
+                    </select>
+                    @ViewData["message"]
+                    <br />
+
+                </div>
+
+                <br>
+                <button>Subscribe</button>
+            </form>
+        </div>

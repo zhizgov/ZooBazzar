@@ -1,0 +1,18 @@
+html {
+  font-size: 14px;
+}
+
+.schedule-card {
+    background-color: #FFFFFF;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    border-radius: 10px;
+}
+ .schedule-card .information {
+        
+     margin-left: 10px; 
+}
+    .schedule-card .information .color {
+        background-color: #3c9017;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }

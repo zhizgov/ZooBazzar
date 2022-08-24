@@ -1,0 +1,33 @@
+﻿@page
+@model ZooBazzarWebApp.Pages.ComplaintModel
+@{
+    Layout = "MyLayout";
+}
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+
+<link rel="stylesheet" href="./css/site.css">
+
+
+<form method="post">
+    <div class="complaint">
+        @ViewData["Error"]
+
+        <label class="cmpl" asp-for="ComplaintDTO.Title"><b>Title</b></label>
+        <input class="cmplTitle" asp-for="ComplaintDTO.Title">
+        <span class="validation-message text-danger" asp-validation-for="ComplaintDTO.Title"></span>
+
+        <label class="cmpl" asp-for="ComplaintDTO.Description"><b>Description</b></label>
+        <input class="cmplDescr" asp-for="ComplaintDTO.Description">
+        <span class="validation-message text-danger" asp-validation-for="ComplaintDTO.Description"></span>
+
+        <button class="btnRequest" type="submit">Request a vacation</button>
+    </div>
+</form>
+
+
